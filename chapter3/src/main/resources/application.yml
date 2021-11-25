@@ -5,12 +5,16 @@ spring:
     url: jdbc:mysql://192.168.1.5:23306/siu20 
     username: siu20 
     password: siu20
- # redis:
- #   host: 192.168.2.100
- #   port: 6379
+ #redis, please install redis service first : yum install redis 
+  redis:
+    host: 192.168.1.19
+    port: 6379
  # activemq:
  #   broker-url: tcp://192.168.2.100:61616
+ 
 #logging
 logging:
   level: 
-    com.itheima.springboot: debug
+   root: info
+   redis.clients: trace
+   org.springframework.data: trace

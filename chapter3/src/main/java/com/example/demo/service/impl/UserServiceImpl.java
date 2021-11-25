@@ -15,11 +15,11 @@ import com.example.demo.service.UserService;
 @Service
 @Transactional
 public class UserServiceImpl implements UserService{
-	// 注入用户Mapper
+
 	@Autowired
 	private UserMapper userMapper;
 	// 查询所有用户
-	@Cacheable(value="UserCache",key="'user.getAllUsers'")
+	@Cacheable(value="UserCache",key="'user.getAllUsers'",sync=true)
 	public List<User> getAllUsers() {
 		return this.userMapper.getAllUsers();
 	}
